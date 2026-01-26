@@ -20,7 +20,7 @@ const HeroSection = () => {
           <div className="space-y-8 animate-slide-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-primary/30">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-sm text-muted-foreground">Available for new projects</span>
+              <span className="text-sm text-muted-foreground">Available for New Opportunities</span>
             </div>
 
             <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight">
