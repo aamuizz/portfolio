@@ -88,7 +88,7 @@ portfolio-website/
 
 ### Prerequisites
 
-- **Node.js** (v18 or higher recommended)
+- **Node.js** (v24.x or higher)
 - **Yarn** (package manager)
 
 ### Installation
