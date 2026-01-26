@@ -1,10 +1,13 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import userData from '@/constants/data';
 
 const HeroSection = () => {
-  // Get first 3 projects for showcase
-  const featuredProjects = userData.projects.slice(0, 3);
+  const projects = [
+    { title: 'Web', image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80' },
+    { title: 'Mobile App', image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80' },
+    { title: 'E-Commerce Platform', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80' },
+    { title: 'SaaS Dashboard', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80' },
+  ];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
@@ -21,17 +24,15 @@ const HeroSection = () => {
             </div>
 
             <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight">
-              <span className="text-gradient-primary">Developer.</span>
-              <br />
-              <span className="text-gradient-accent">Designer.</span>
-              <br />
-              <span className="text-gradient-primary">Programmer.</span>
-              <br />
-              <span className="text-gradient-accent">Freelancer.</span>
+              Full-Stack{' '}
+              <span className="text-gradient-primary">Developer</span>
+              {' '}&amp;{' '}
+              <span className="text-gradient-accent">Freelancer</span>
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-              {userData.about.title}
+              I build performant web & mobile apps, crafting exceptional digital experiences through clean code and creative solutions. 
+              Specializing in modern technologies and scalable, production-ready applications.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -50,38 +51,41 @@ const HeroSection = () => {
               </div>
               <div className="w-px h-12 bg-border" />
               <div>
-                <p className="font-display text-3xl font-bold text-gradient-accent">50+</p>
+                <p className="font-display text-3xl font-bold text-gradient-accent">100+</p>
                 <p className="text-sm text-muted-foreground">Projects Completed</p>
+              </div>
+              <div className="w-px h-12 bg-border" />
+              <div>
+                <p className="font-display text-3xl font-bold text-foreground">30+</p>
+                <p className="text-sm text-muted-foreground">Happy Clients</p>
               </div>
             </div>
           </div>
 
-          {/* Avatar Image */}
+          {/* Project Showcase */}
           <div className="relative hidden lg:block animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <div className="relative">
-              <div className="glass-card rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src={userData.avatarUrl}
-                  alt={`${userData.name} profile picture`}
-                  className="w-full h-auto object-cover rounded-2xl"
-                />
-              </div>
-              <div className="flex flex-row items-center gap-2 mt-4 text-muted-foreground">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-arrow-90deg-up"
-                  viewBox="0 0 16 16"
+              {projects.map((project, index) => (
+                <div
+                  key={project.title}
+                  className="absolute glass-card rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 hover:scale-105 hover:z-20"
+                  style={{
+                    top: `${index * 40}px`,
+                    left: `${index * 30}px`,
+                    zIndex: projects.length - index,
+                    transform: `rotate(${(index - 1) * 3}deg)`,
+                  }}
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z"
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-80 h-52 object-cover"
                   />
-                </svg>
-                <p className="font-mono text-sm">That's me</p>
-              </div>
+                  <div className="p-4">
+                    <p className="font-medium text-foreground">{project.title}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

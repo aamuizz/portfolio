@@ -44,7 +44,7 @@ const ExpertiseSection = () => {
           <div className="grid md:grid-cols-3 gap-8 mt-20">
           {[
             { value: '7+', label: 'Years Experience' },
-            { value: `50+`, label: 'Projects Completed' },
+            { value: `100+`, label: 'Projects Completed' },
             { value: `${technologies.length}+`, label: 'Technologies Mastered' },
           ].map((stat) => (
             <div key={stat.label} className="text-center glass-card rounded-2xl p-8 hover:glow-secondary transition-all duration-300">

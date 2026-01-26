@@ -18,6 +18,13 @@ const AboutSection = () => {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact & Social Links */}
             <div className="space-y-8">
+            <div className="mb-8">
+              <img
+                src={userData.avatarUrl}
+                alt={`${userData.name} profile picture`}
+                className="w-full max-w-xs rounded-2xl object-cover shadow-2xl mb-6"
+              />
+            </div>
             <div>
               <h2 className="text-xl font-semibold mb-4">Contact</h2>
               <p className="text-muted-foreground mb-4">
