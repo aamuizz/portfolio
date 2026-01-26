@@ -10,10 +10,7 @@ const getInitialTheme = (): Theme => {
     return stored;
   }
   
-  // Check system preference
-  if (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    return 'light';
-  }
+  // Default to dark mode
   return 'dark';
 };
 
