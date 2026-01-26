@@ -10,10 +10,19 @@ const Footer = () => {
     { icon: Mail, href: `mailto:${userData.email}`, label: 'Email' },
   ];
 
+  const navLinks = [
+    { label: 'About', href: '#about' },
+    { label: 'Expertise', href: '#expertise' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Testimonials', href: '#testimonials' },
+    { label: 'FAQ', href: '#faq' },
+  ];
+
   const footerLinks = [
     {
       title: 'Navigation',
-      links: ['Home', 'About', 'Services', 'Portfolio', 'Contact'],
+      links: navLinks,
     },
   ];
 
@@ -55,12 +64,12 @@ const Footer = () => {
                 <h4 className="font-display font-semibold mb-4">{section.title}</h4>
                 <ul className="space-y-2">
                   {section.links.map((link) => (
-                    <li key={link}>
+                    <li key={link.label}>
                       <a
-                        href="#"
+                        href={link.href}
                         className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                       >
-                        {link}
+                        {link.label}
                       </a>
                     </li>
                   ))}
