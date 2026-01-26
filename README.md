@@ -1,6 +1,6 @@
 # Portfolio Website
 
-A modern, responsive portfolio website showcasing my work, experience, and expertise as a Full-Stack Developer. Built with React, TypeScript, and Tailwind CSS, featuring a beautiful UI with smooth animations and dark/light theme support.
+A modern, responsive portfolio website showcasing my work, experience, and expertise as a Full-Stack Developer. Built with React, TypeScript, and Tailwind CSS, featuring a beautiful UI with smooth animations.
 
 ## ✨ Features
 
