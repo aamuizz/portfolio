@@ -6,6 +6,47 @@
 
 @layer base {
   :root {
+    /* Light mode colors */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 47 100% 50%;
+    --primary-foreground: 222 47% 5%;
+
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 270 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 47 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for light mode */
+    --gradient-hero: linear-gradient(135deg, hsl(47 100% 50%) 0%, hsl(35 100% 55%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(270 80% 60%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --glow-primary: 0 0 40px hsl(47 100% 50% / 0.2);
+    --glow-secondary: 0 0 40px hsl(217 91% 60% / 0.2);
+  }
+
+  .dark {
+    /* Dark mode colors */
     --background: 222 47% 5%;
     --foreground: 210 40% 98%;
 
@@ -34,9 +75,7 @@
     --input: 217 33% 17%;
     --ring: 47 100% 50%;
 
-    --radius: 0.75rem;
-
-    /* Custom tokens */
+    /* Custom tokens for dark mode */
     --gradient-hero: linear-gradient(135deg, hsl(47 100% 50%) 0%, hsl(35 100% 55%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(270 80% 60%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(222 47% 10%) 0%, hsl(222 47% 6%) 100%);
@@ -73,7 +112,7 @@
 
   .glass-card {
     @apply backdrop-blur-xl border border-border/50;
-    background: hsl(222 47% 8% / 0.8);
+    background: hsl(var(--card) / 0.8);
   }
 
   .glow-primary {
@@ -137,14 +176,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(222 47% 5%);
+  background: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(217 33% 25%);
+  background: hsl(var(--muted));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(217 33% 35%);
+  background: hsl(var(--muted-foreground) / 0.5);
 }

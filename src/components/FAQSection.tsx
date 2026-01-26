@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import ScrollReveal from '@/components/ScrollReveal';
 
 const FAQSection = () => {
   const faqs = [
@@ -36,22 +37,25 @@ const FAQSection = () => {
   return (
     <section id="faq" className="py-24 relative">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <p className="text-primary font-medium mb-2">Got Questions?</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">
-            Frequently Asked{' '}
-            <span className="text-gradient-accent">Questions</span>
-          </h2>
-        </div>
+        <ScrollReveal direction="up" delay={0}>
+          <div className="text-center mb-16">
+            <p className="text-primary font-medium mb-2">Got Questions?</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold">
+              Frequently Asked{' '}
+              <span className="text-gradient-accent">Questions</span>
+            </h2>
+          </div>
+        </ScrollReveal>
 
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="glass-card rounded-xl border-none px-6 overflow-hidden"
-              >
+        <ScrollReveal direction="up" delay={200}>
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="glass-card rounded-xl border-none px-6 overflow-hidden"
+                >
                 <AccordionTrigger className="text-left font-display font-semibold hover:text-primary transition-colors py-6">
                   {faq.question}
                 </AccordionTrigger>
@@ -60,8 +64,9 @@ const FAQSection = () => {
                 </AccordionContent>
               </AccordionItem>
             ))}
-          </Accordion>
-        </div>
+            </Accordion>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { Star, Quote } from 'lucide-react';
+import ScrollReveal from '@/components/ScrollReveal';
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -49,20 +50,21 @@ const TestimonialsSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/30 to-transparent" />
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <p className="text-primary font-medium mb-2">Social Proof</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">
-            What Clients{' '}
-            <span className="text-gradient-accent">Say</span>
-          </h2>
-        </div>
+        <ScrollReveal direction="up" delay={0}>
+          <div className="text-center mb-16">
+            <p className="text-primary font-medium mb-2">Social Proof</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold">
+              What Clients{' '}
+              <span className="text-gradient-accent">Say</span>
+            </h2>
+          </div>
+        </ScrollReveal>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {testimonials.map((testimonial, index) => (
+            <ScrollReveal key={testimonial.name} direction="up" delay={index * 100}>
             <div
-              key={testimonial.name}
               className="glass-card rounded-2xl p-8 hover:glow-secondary transition-all duration-300 relative group"
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <Quote className="absolute top-6 right-6 w-10 h-10 text-primary/20 group-hover:text-primary/40 transition-colors" />
               
@@ -76,21 +78,11 @@ const TestimonialsSection = () => {
                 "{testimonial.content}"
               </p>
 
-              <div className="flex items-center gap-4">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div>
-                  <p className="font-medium">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-                <span className={`ml-auto text-sm font-medium ${platformColors[testimonial.platform] || 'text-muted-foreground'}`}>
-                  via {testimonial.platform}
-                </span>
+              <div>
+                <p className="font-medium">{testimonial.name}</p>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
