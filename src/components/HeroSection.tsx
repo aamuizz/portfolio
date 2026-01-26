@@ -5,8 +5,8 @@ const HeroSection = () => {
   const projects = [
     { title: 'Web', image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80' },
     { title: 'Mobile App', image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80' },
-    { title: 'E-Commerce Platform', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80' },
-    { title: 'SaaS Dashboard', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80' },
+    { title: 'Enterprise Platform', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80' },
+    { title: 'Cloud Solution', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80' },
   ];
 
   return (
