@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/hooks/use-theme';
+import userData from '@/constants/data';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,13 +21,28 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/30">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="#" className="font-display text-2xl font-bold text-gradient-primary flex items-center gap-2">
-            <img 
-              src="/logo.png" 
-              alt="Logo" 
-              className="w-8 h-8 rounded-full object-cover"
-            />
-            AM
+          <a href="#" className="font-display flex items-center gap-2 group relative">
+            <div className="relative">
+              <img 
+                src="/logo.png" 
+                alt="Logo" 
+                className="w-8 h-8 rounded-full object-cover transition-transform duration-300 group-hover:scale-110 relative z-10"
+              />
+              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300"></span>
+            </div>
+            {/* Symbolic name - compact logo style */}
+            <span className="relative inline-flex items-center gap-1.5">
+              <span className="w-0.5 h-6 bg-gradient-to-b from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
+              <span className="flex flex-col leading-none">
+                <span className="text-gradient-primary text-xl font-bold tracking-tighter">
+                  {userData.name.split(' ')[0]}
+                </span>
+                <span className="text-foreground text-sm font-bold opacity-70 group-hover:opacity-100 transition-opacity -mt-0.5 tracking-tight">
+                  {userData.name.split(' ').slice(1).join(' ')}
+                </span>
+              </span>
+              <span className="w-0.5 h-6 bg-gradient-to-b from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            </span>
           </a>
 
           {/* Desktop Navigation */}

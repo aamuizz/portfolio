@@ -33,13 +33,36 @@ const Footer = () => {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             {/* Brand */}
             <div className="space-y-4">
-              <a href="#" className="font-display text-3xl font-bold text-gradient-primary flex items-center gap-2">
-                <img 
-                  src="/logo.png" 
-                  alt="Logo" 
-                  className="w-8 h-8 rounded-full object-cover"
-                />
-                {userData.name.split(' ').map(n => n[0]).join('')}
+              <a href="#" className="font-display flex items-center gap-3 group relative">
+                <div className="relative">
+                  <img 
+                    src="/logo.png" 
+                    alt="Logo" 
+                    className="w-10 h-10 rounded-full object-cover transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 relative z-10"
+                  />
+                  {/* Glowing ring around logo */}
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300"></span>
+                </div>
+                {/* Symbolic name display - logo-style wordmark */}
+                <span className="relative inline-flex items-center gap-2">
+                  {/* Decorative left accent */}
+                  <span className="w-1 h-8 bg-gradient-to-b from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  
+                  {/* Name as symbol - artistic arrangement */}
+                  <span className="flex flex-col items-start leading-none relative">
+                    <span className="text-gradient-primary text-3xl font-bold tracking-tighter">
+                      {userData.name.split(' ')[0]}
+                    </span>
+                    <span className="text-foreground text-xl font-bold opacity-70 group-hover:opacity-100 transition-opacity -mt-1 tracking-tight">
+                      {userData.name.split(' ').slice(1).join(' ')}
+                    </span>
+                    {/* Decorative bottom accent */}
+                    <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  </span>
+                  
+                  {/* Decorative right accent */}
+                  <span className="w-1 h-8 bg-gradient-to-b from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                </span>
               </a>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {userData.designation} crafting exceptional digital experiences.
