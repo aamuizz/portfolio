@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail, MapPin, ArrowUp, Calendar } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, ArrowUp, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import userData from '@/constants/data';
 import ScrollReveal from '@/components/ScrollReveal';
@@ -7,7 +7,6 @@ const Footer = () => {
   const socialLinks = [
     { icon: Github, href: userData.socialLinks.github, label: 'GitHub' },
     { icon: Linkedin, href: userData.socialLinks.linkedin, label: 'LinkedIn' },
-    { icon: Twitter, href: userData.socialLinks.twitter, label: 'Twitter' },
     { icon: Mail, href: `mailto:${userData.email}`, label: 'Email' },
   ];
 
