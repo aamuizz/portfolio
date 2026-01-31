@@ -124,6 +124,44 @@ export const userData = {
     { name: "Tailwind CSS", category: "Styling" },
     { name: "Express", category: "Backend" },
   ],
+  services: [
+    {
+      title: "Web Development",
+      description: "Building modern, responsive web applications using React, Next.js, and TypeScript. From landing pages to complex enterprise solutions.",
+      icon: "Code2",
+      features: ["React & Next.js", "TypeScript", "Responsive Design", "Performance Optimization"],
+    },
+    {
+      title: "Mobile App Development",
+      description: "Cross-platform mobile applications for iOS and Android using React Native and Expo. Native performance with shared codebase.",
+      icon: "Smartphone",
+      features: ["React Native", "Expo", "iOS & Android", "App Store Deployment"],
+    },
+    {
+      title: "Backend Development",
+      description: "Scalable server-side solutions with RESTful APIs, GraphQL, and microservices architecture. Built for performance and reliability.",
+      icon: "Database",
+      features: ["Node.js & NestJS", "GraphQL", "REST APIs", "Microservices"],
+    },
+    {
+      title: "Cloud & DevOps",
+      description: "Deploying and managing applications on AWS with CI/CD pipelines, containerization, and infrastructure as code.",
+      icon: "Cloud",
+      features: ["AWS Services", "Docker", "CI/CD", "Infrastructure Setup"],
+    },
+    {
+      title: "API Development",
+      description: "Designing and building robust APIs with proper authentication, rate limiting, and comprehensive documentation.",
+      icon: "Zap",
+      features: ["REST & GraphQL", "Authentication", "API Documentation", "Rate Limiting"],
+    },
+    {
+      title: "Maintenance & Support",
+      description: "Ongoing maintenance, bug fixes, security updates, and performance monitoring to keep your applications running smoothly.",
+      icon: "Settings",
+      features: ["Bug Fixes", "Security Updates", "Performance Monitoring", "Technical Support"],
+    },
+  ],
 };
 
 export default userData;

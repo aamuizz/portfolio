@@ -1,11 +1,15 @@
 import { MapPin, Code2, Mail, Github, Linkedin } from 'lucide-react';
 import userData from '@/constants/data';
 import ScrollReveal from '@/components/ScrollReveal';
+import { GradientOrbs, DotPattern, GlowEffect } from '@/components/DecorativeElements';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 relative">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-24 relative overflow-hidden">
+      <GradientOrbs className="opacity-50" />
+      <DotPattern />
+      <GlowEffect position="left" />
+      <div className="container mx-auto px-6 relative z-10">
         <ScrollReveal direction="up" delay={0}>
           <div className="mb-16">
             <h1 className="font-display text-5xl md:text-7xl font-bold mb-6">
@@ -18,11 +22,12 @@ const AboutSection = () => {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact & Social Links */}
             <div className="space-y-8">
-            <div className="mb-8">
+            <div className="mb-8 relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img
                 src={userData.avatarUrl}
                 alt={`${userData.name} profile picture`}
-                className="w-full max-w-xs rounded-2xl object-cover shadow-2xl mb-6"
+                className="relative w-full max-w-xs rounded-2xl object-cover shadow-2xl mb-6 ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all duration-500 group-hover:scale-105"
               />
             </div>
             <div>

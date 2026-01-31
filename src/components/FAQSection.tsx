@@ -22,7 +22,7 @@ const FAQSection = () => {
     },
     {
       question: 'What technologies do you specialize in?',
-      answer: 'My core stack includes React, Next.js, Node.js, TypeScript, and PostgreSQL. I also have extensive experience with AWS, Docker, and various modern development tools and frameworks.',
+      answer: 'My core stack includes React, Next.js, NestJS, React Native, Node.js, TypeScript, and PostgreSQL. I also have extensive experience with AWS, Docker, and various modern development tools and frameworks.',
     },
     {
       question: 'How do you handle project communication?',

@@ -1,5 +1,6 @@
 import { Star, Quote } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
+import { GradientOrbs, DotPattern, GlowEffect } from '@/components/DecorativeElements';
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -48,6 +49,9 @@ const TestimonialsSection = () => {
   return (
     <section id="testimonials" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/30 to-transparent" />
+      <GradientOrbs className="opacity-30" />
+      <DotPattern />
+      <GlowEffect position="center" />
       
       <div className="container mx-auto px-6 relative z-10">
         <ScrollReveal direction="up" delay={0}>
@@ -64,13 +68,15 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <ScrollReveal key={testimonial.name} direction="up" delay={index * 100}>
             <div
-              className="glass-card rounded-2xl p-8 hover:glow-secondary transition-all duration-300 relative group"
+              className="glass-card rounded-2xl p-8 hover:glow-secondary transition-all duration-300 relative group overflow-hidden"
             >
-              <Quote className="absolute top-6 right-6 w-10 h-10 text-primary/20 group-hover:text-primary/40 transition-colors" />
+              {/* Decorative background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-secondary/0 group-hover:from-primary/5 group-hover:to-secondary/5 transition-all duration-500" />
+              <Quote className="absolute top-6 right-6 w-10 h-10 text-primary/20 group-hover:text-primary/40 transition-colors z-10" />
               
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-4 relative z-10">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                  <Star key={i} className="w-4 h-4 fill-primary text-primary group-hover:scale-110 transition-transform" style={{ transitionDelay: `${i * 50}ms` }} />
                 ))}
               </div>
 

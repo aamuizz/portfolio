@@ -1,5 +1,6 @@
 import userData from '@/constants/data';
 import ScrollReveal from '@/components/ScrollReveal';
+import { GradientOrbs, DotPattern, GlowEffect } from '@/components/DecorativeElements';
 
 const ExpertiseSection = () => {
   const technologies = userData.techStack;
@@ -8,6 +9,9 @@ const ExpertiseSection = () => {
     <section id="expertise" className="py-24 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/50 to-transparent" />
+      <GradientOrbs className="opacity-30" />
+      <DotPattern />
+      <GlowEffect position="top" />
       
       <div className="container mx-auto px-6 relative z-10">
         <ScrollReveal direction="up" delay={0}>

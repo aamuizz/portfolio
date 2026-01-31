@@ -1,6 +1,7 @@
 import { Building2 } from 'lucide-react';
 import userData from '@/constants/data';
 import ScrollReveal from '@/components/ScrollReveal';
+import { GradientOrbs, DotPattern, GlowEffect } from '@/components/DecorativeElements';
 
 const ExperienceSection = () => {
   const experiences = userData.experience.map((exp) => ({
@@ -12,8 +13,11 @@ const ExperienceSection = () => {
   }));
 
   return (
-    <section id="experience" className="py-24 relative">
-      <div className="container mx-auto px-6">
+    <section id="experience" className="py-24 relative overflow-hidden">
+      <GradientOrbs className="opacity-30" />
+      <DotPattern />
+      <GlowEffect position="center" />
+      <div className="container mx-auto px-6 relative z-10">
         <ScrollReveal direction="up" delay={0}>
           <div className="text-center mb-16">
             <p className="text-primary font-medium mb-2">Career Journey</p>
@@ -25,8 +29,10 @@ const ExperienceSection = () => {
         </ScrollReveal>
 
         <div className="max-w-4xl mx-auto relative">
-          {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-accent transform md:-translate-x-px" />
+          {/* Enhanced Timeline line */}
+          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent transform md:-translate-x-px">
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/50 via-secondary/50 to-accent/50 blur-sm" />
+          </div>
 
           {experiences.map((exp, index) => (
             <ScrollReveal key={exp.company} direction={index % 2 === 0 ? 'left' : 'right'} delay={index * 100}>
@@ -35,8 +41,13 @@ const ExperienceSection = () => {
                 index % 2 === 0 ? 'md:flex-row-reverse' : ''
               }`}
             >
-              {/* Timeline dot */}
-              <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1.5 md:-translate-x-2 mt-6 glow-primary" />
+              {/* Enhanced Timeline dot */}
+              <div className="absolute left-0 md:left-1/2 transform -translate-x-1.5 md:-translate-x-2 mt-6">
+                <div className="w-4 h-4 bg-primary rounded-full glow-primary relative">
+                  <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-20" />
+                  <div className="absolute inset-0 bg-primary/50 rounded-full blur-md" />
+                </div>
+              </div>
 
               {/* Content */}
               <div className={`flex-1 ml-8 md:ml-0 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>

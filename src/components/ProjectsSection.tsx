@@ -1,11 +1,15 @@
 import { ExternalLink } from 'lucide-react';
 import userData from '@/constants/data';
 import ScrollReveal from '@/components/ScrollReveal';
+import { GradientOrbs, GridPattern, GlowEffect } from '@/components/DecorativeElements';
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-24 relative">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-24 relative overflow-hidden">
+      <GradientOrbs className="opacity-40" />
+      <GridPattern />
+      <GlowEffect position="right" />
+      <div className="container mx-auto px-6 relative z-10">
         <ScrollReveal direction="up" delay={0}>
           <div className="mb-16">
             <p className="text-primary font-medium mb-2">Portfolio</p>
@@ -23,14 +27,18 @@ const ProjectsSection = () => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group glass-card rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              className="group glass-card rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative"
             >
+              {/* Decorative gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-secondary/0 group-hover:from-primary/10 group-hover:to-secondary/10 transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
               <div className="relative overflow-hidden">
-                <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative">
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 z-20" />
                   <img
                     src={project.imgUrl}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 relative z-10"
                     onError={(e) => {
                       // Fallback if image doesn't load
                       const target = e.target as HTMLImageElement;

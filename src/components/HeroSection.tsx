@@ -1,5 +1,6 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { GradientOrbs, FloatingShapes, GridPattern, GlowEffect } from '@/components/DecorativeElements';
 
 const HeroSection = () => {
   const projects = [
@@ -11,9 +12,11 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
+      {/* Enhanced gradient orbs */}
+      <GradientOrbs />
+      <GridPattern />
+      <FloatingShapes />
+      <GlowEffect position="center" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -40,6 +43,16 @@ const HeroSection = () => {
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 glow-primary group">
                   View my Projects
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
+              <a 
+                href="https://mentoga.com/abdulmuizz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" variant="outline" className="border-primary/50 hover:bg-primary/10 hover:border-primary hover:text-primary group">
+                  <Calendar className="mr-2 w-4 h-4 group-hover:scale-110 transition-transform" />
+                  Schedule a Call
                 </Button>
               </a>
             </div>
