@@ -177,7 +177,14 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pt-6 pb-4 space-y-2 animate-slide-in border-t border-border/30 mt-4">
+          <>
+            {/* Backdrop overlay - positioned below navbar */}
+            <div 
+              className="fixed top-[73px] left-0 right-0 bottom-0 bg-background/90 z-40 md:hidden"
+              onClick={() => setIsOpen(false)}
+              aria-hidden="true"
+            />
+            <div className="md:hidden pt-6 pb-4 space-y-2 animate-slide-in border-t border-border/30 mt-4 bg-background/98 shadow-2xl -mx-6 px-6 relative z-50">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href;
               return (
@@ -244,6 +251,7 @@ const Navbar = () => {
               </a>
             </div>
           </div>
+          </>
         )}
       </div>
     </nav>
